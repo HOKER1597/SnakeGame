@@ -1,0 +1,116 @@
+#include <main.h>
+#define LCD_ENABLE_PIN PIN_C0
+#define LCD_RS_PIN PIN_C1
+#define LCD_RW_PIN PIN_C2
+#define LCD_DATA4 PIN_C3
+#define LCD_DATA5 PIN_C4
+#define LCD_DATA6 PIN_C5
+#define LCD_DATA7 PIN_C6
+
+#include <lcd.c>
+#CASE 
+
+int16 t_ms = 0;
+char t_s = 0;
+char t_m = 0;
+char buffer[32];
+void init()
+{
+setup_timer_0(RTCC_INTERNAL|RTCC_DIV_8);
+setup_timer_1(T1_DISABLED);
+setup_timer_2(T2_DISABLED,0,1);
+setup_timer_3(T3_DISABLED|T3_DIV_BY_1);
+enable_interrupts(INT_RTCC);
+enable_interrupts(INT_EXT);
+enable_interrupts(INT_EXT1);
+enable_interrupts(INT_EXT2);
+enable_interrupts(INT_RDA);
+enable_interrupts(GLOBAL);
+port_b_pullups(TRUE); 
+}
+
+void time_show()
+{
+lcd_gotoxy(1,1);
+lcd_putc("Myrylko Anatolii");
+sprintf(buffer,"Time: %u:%u",t_m,t_s);
+lcd_gotoxy(1,2); 
+lcd_putc(buffer);
+}
+
+void time()
+{
+t_ms += 100;
+if(t_ms >= 1000){
+t_s ++;
+t_ms = 0;
+time_show();
+}
+if(t_s == 59){
+t_m ++;
+t_s =0;
+}
+}
+
+#int_RTCC
+void RTCC_isr(void)
+{
+time();
+}
+
+#int_EXT
+void EXT_isr(void)
+{
+int i;
+lcd_gotoxy(1,4);
+lcd_putc("Interrupt 0");
+for(i=0; i<5; i++)
+{
+output_high(PIN_B7);
+delay_ms(200);
+output_low(PIN_B7);
+delay_ms(200);
+}
+}
+
+#int_EXT1
+void EXT1_isr(void)
+{
+int i;
+lcd_gotoxy(1,4);
+lcd_putc("Interrupt 1");
+for(i=0; i<5; i++)
+{
+output_high(PIN_B6);
+delay_ms(200);
+output_low(PIN_B6);
+delay_ms(200);
+}
+}
+
+#int_EXT2
+void EXT2_isr(void)
+{
+int i;
+lcd_gotoxy(1,4);
+lcd_putc("Interrupt 2");
+for(i=0; i<5; i++)
+{
+output_high(PIN_B5);
+delay_ms(200);
+output_low(PIN_B5);
+delay_ms(200);
+}
+}
+
+void main(int argc, char* argv[])
+{
+init();
+set_tris_b(0b00011111);
+lcd_init();
+delay_ms(1000);
+for(;;)
+{
+}
+}
+

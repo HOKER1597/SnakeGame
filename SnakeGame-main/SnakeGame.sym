@@ -1,0 +1,143 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017-018 t_ms
+019     t_s
+01A     t_m
+01B-03A buffer
+03B-03C @sprintf_string
+03D     main.argc
+03E-03F main.argv
+040     lcd_init.i
+040     main.@SCRATCH1
+041-044 lcd_init.LCD_INIT_STRING
+045     lcd_init.@SCRATCH1
+04C     EXT2_isr.i
+04C     EXT_isr.i
+04C     @PRINTF_U_658.P1
+04C     @PSTRINGCN_658.P2
+04C     EXT1_isr.i
+04D     @PRINTF_U_658.P1
+04D     @PSTRINGC_636.@SCRATCH1
+04D     @PSTRINGCN_658.@SCRATCH1
+04E     @DIV88.P1
+04E     @PSTRINGC_636.@SCRATCH2
+04E     @PSTRINGCN_658.@SCRATCH2
+04F     lcd_putc.c
+04F     @SPRINTF.P1
+04F     @DIV88.P2
+050     lcd_gotoxy.x
+050     @delay_ms1.P1
+050     @DIV88.@SCRATCH1
+051     lcd_gotoxy.y
+052     lcd_gotoxy.address
+053     lcd_gotoxy.@SCRATCH1
+054     lcd_send_byte.address
+055     lcd_send_byte.n
+056     lcd_read_byte.low
+056     lcd_send_byte.@SCRATCH1
+057     lcd_send_nibble.n
+057     lcd_read_byte.high
+058     lcd_read_nibble.n
+058     lcd_read_byte.@SCRATCH1
+059     lcd_read_nibble.@SCRATCH1
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BA  @const654.call
+0000CC  @const656.call
+0000D8  lcd_read_nibble
+00012A  lcd_read_byte
+000176  lcd_send_nibble
+0001BE  lcd_send_byte
+000204  lcd_gotoxy
+000226  @delay_ms1
+00024C  lcd_putc
+00029C  @PSTRINGC_636
+0002BC  @SPRINTF
+0002D8  @PSTRINGCN_658
+0002F8  @DIV88
+000320  @PRINTF_U_658
+000386  time_show
+0003DA  time
+000408  RTCC_isr
+000410  EXT_isr
+00044A  @const672.call
+000456  EXT1_isr
+000490  @const675.call
+00049C  EXT2_isr
+0004D6  @const678.call
+0004E2  init
+000506  lcd_init
+0005CE  main
+0005CE  @cinit1
+0005E8  @cinit2
+
+Project Directory:
+    C:\Users\pushy\Desktop\ХНТУ\Курсова робота\Курсова А і ПМК(5 семестр)\SnakeGame-main\
+
+Project Files:
+    SnakeGame.c                                             [02-янв-23 12:39  CRC=D135B403]
+    ..\..\..\Курс 3\Архітектура і програмування мікроконтролерів\Project\main.h [27-ноя-22 14:23  CRC=D8102B21]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F252.h [12-ноя-13 13:35  CRC=BF791F18]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [19-сен-13 14:38  CRC=D1A6378A]
+
+Source signature=0C0B6D50
+
+Units:
+    SnakeGame (main)
+
+Compiler Settings:
+    Processor:      PIC18F252
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Case Sensitive: Yes
+
+Output Files:
+    XREF file:   SnakeGame.xsym
+    Errors:      SnakeGame.err
+    Ext Symbols: SnakeGame.esym
+    INHX32:      SnakeGame.hex
+    Symbols:     SnakeGame.sym
+    List:        SnakeGame.lst
+    Debug/COFF:  SnakeGame.cof
+    Project:     SnakeGame.ccspjt
+    Call Tree:   SnakeGame.tre
+    Statistics:  SnakeGame.STA

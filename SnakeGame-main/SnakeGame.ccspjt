@@ -1,0 +1,20 @@
+[PROJECT]
+Target=SnakeGame.hex
+Processor_Text=PIC18F252
+CCSVersion=5.015
+Compiler=PCH
+[Target Data]
+FileList=SnakeGame.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[SnakeGame.c]
+Type=4
+[mru-list]
+1=SnakeGame.c
+[Units]
+Count=1
+1=SnakeGame (main)
+[Opened Files]
+1=SnakeGame.c
+2=image.c
+3=
